@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lesson 2: Let's Make It ES5 compatible</title>
+    <meta charset="UTF-8"/>
+
+    <link rel="stylesheet" href="../index.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans" />
+    <script src="dist/bundle.js"></script>
+</head>
+<body>
+
+    <h1>
+        Webpack 101
+    </h1>
+
+    <hr />
+
+    <section>
+        <p>
+            Now that we know how to bundle our files, lets take a look at the <b>transpiling</b> side of things
+            When it comes to transpiling, webpack has two main concepts that you have to know: <b>loaders</b> and <b>plugins</b>.
+            We will talk about plugins in the next page.
+        </p>
+    </section>
+    <section>
+        <h2>Loaders</h2>
+        <p>
+            Loaders allow you to preprocess ANY file type and output something else in turn. There are many loaders out there
+            and you can even write one yourself if you want, it's not that hard. The loader that we are going to look at now
+            is called <i>babel-loader</i>. This is a popular loader, because it is able to transpile bleeding-edge JavaScript
+            to any ECMAScript Standard that you like, such that you are compatible across all browsers, even those from the late
+            2000s.
+        </p>
+        <p>
+            We add the babel-loader in our webpack-config like so:
+            <pre>
+<code>
+    const path = require('path');
+    module.exports = {
+    entry: './index.js',
+    output: {
+        path: path.resolve(__dirname, 'dist'),
+        filename: 'bundle.js',
+    },
+    mode: 'production',
+    module: {
+        rules: [
+            {
+                test: /\.js$/,
+                include: path.resolve('./'),
+                loader: 'babel-loader',
+                options: {
+                    presets: ['babel-preset-env']
+                }
+            }
+        ]
+    }
+    }</code>
+            </pre>
+
+            Note that "babel-preset-env" is a smart parameter that you can pass to babel so that you can always use cutting
+            edge JavaScript. if we didn't pass this preset, we would have to specify the version that we're writing in and
+            the version that we are targeting explicitly.
+        </p>
+    </section>
+
+    <div id="root"></div>
+
+    <nav>
+        <a href="../Lesson3/lesson3.html">Lesson 3: What's a plugin =></a>
+    </nav>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Preamble: Why does webpack exist?</title>
+    <meta charset="UTF-8"/>
+
+    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans" />
+</head>
+<body>
+
+    <h1>
+        Webpack 101
+    </h1>
+
+    <hr />
+
+    <h2>
+        &#129300; Why does webpack and babel exist? &#129300;
+    </h2>
+
+    <section>
+        <p>
+            <b>
+                TLDR: JavaScript people like shiny new features, but these features have varying
+                levels of support cross-browser, or even no support at all.
+            </b>
+        </p>
+    </section>
+
+    <section>
+        <h3>
+            The ECMAScript Standard
+        </h3>
+    
+        <p>
+            A big part of what your browser does is nowadays is process JavaScript. JavaScript itself
+            is just an implementation of the <b>ECMAScript Standard</b>. Your browser vendor has to
+            implement this standard (in their own way) in order to be compliant. (See the Standard
+            <a href="https://www.w3schools.com/Js/js_versions.asp">here</a>.)
+        </p>
+    
+        <p>
+            Now, let's say that you're favorite browser fails to implement some shiny new feature from
+            the shiny new ES2019 that you really really want to news (side note: you probably don't need
+            it). Of course you could yolo use it anyway, but that might break many of your users.
+        </p>
+    
+        <p>
+            To remedy this, people started using things called <b>transpilers</b>. Transpilers are able to take
+            JavaScript written in your shiny new syntax, and <b>transpile</b> it into JavaScript that is
+            compatible with a browser that does not yet support your shiny new syntax.
+        </p>
+
+        <p>
+            The cousin of the <b>transpiler</b> is the <b>bundler</b>. The bundler takes all of the transpiled files
+            that you've imported and squeezes them all into one file, so that it's easy for your browser to consume.
+        </p>
+        <p>
+            <b>Webpack</b> is a bundler. <b>Babel</b> is a transpiler.
+        </p>
+    </section>
+
+    <section>
+        <h3>
+            JavaScript: A love of shiny things
+        </h3>
+        <p>
+            On top of wanting shiny new things that exist in the ECMAScript standard, JavaScript people also want
+            shiny new things that do not exist at all! This is where TypeScript, React, SCSS, etc. come in. These
+            syntaxes are NOT supported in the ECMAScript standard. Hence, we create a bunch of <b>transpilers</b>
+            to convert their code into vanilla JavaScript, and then we simply bundle them.
+        </p>
+    </section>
+
+    <nav>
+        <a href="./Lesson1/lesson1.html">Lesson 1: A Simple Webpack Example =></a>
+    </nav>
+</body>
+</html>

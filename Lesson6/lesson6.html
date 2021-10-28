@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lesson 6: TypeScript Integration</title>
+    <meta charset="UTF-8"/>
+
+    <link rel="stylesheet" href="../index.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans" />
+    <script src="dist/bundle.js"></script>
+</head>
+<body>
+
+    <h1>
+        Webpack 101
+    </h1>
+
+    <hr />
+
+    <section>
+        <h2>TypeScript (aka Annoying JavaScript)</h2>
+        <p>
+            Don't get me wrong. I like types. But the types don't matter if their fake anyway.
+        </p>
+        <p>
+            At some point in your development, someone somewhere is going to want to write TypeScript.
+            Luckily, we know that TypeScript is just another file format, and our webpack configuration
+            can easily handle it.
+        </p>
+        <p>
+            First, we'll need the types for react, so let's do the following:
+            <code>
+
+            <pre>
+
+    npm install --save-dev @types/react @types/react-dom
+            </pre>
+            </code>
+
+            This way, TypeScript can resolve types for React.
+        </p>
+        <p>
+            Next, let's install our TypeScript loader in webpack. We will use ts-loader. To use it, we also need
+            to have typescript installed (typescript provides us with the "tsc" command that can turn any JavaScript
+            file into a JavaScript file; ts-loader uses this "tsc" command internally).
+            <pre>
+
+    npm install --save-dev ts-loader typescript.
+            </pre>
+            </code>
+        </p>
+        <p>
+            Next, we tell webpack how to resolve files with a .ts or .tsx extension like so:
+            <pre>
+    
+    ...
+    {
+        test:/\.(ts|tsx)$/,
+        include: path.resolve('./'),
+        loader: 'ts-loader',
+        exclude: /node_modules/
+    }
+    ...
+            </pre>
+            </code>
+        </p>
+        <p>
+            Finally, we add a tsconfig.json to the top-level of our project, next to our webpack.config.js. I will not
+            get super deep into this configuration file, but do know that it is what your tsc command (and ts-loader internally)
+            uses to process your TypeScript files. It is infinitely configurable, but that is a talk for another day.
+        </p>
+    </section>
+
+    <div id="root"></div>
+
+    <nav>
+        <a href="../Lesson7/lesson7.html">Lesson 7: Our own loader =></a>
+    </nav>
+</body>
+</html>

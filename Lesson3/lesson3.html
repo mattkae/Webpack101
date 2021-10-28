@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lesson 3: What's a plugin</title>
+    <meta charset="UTF-8"/>
+
+    <link rel="stylesheet" href="../index.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans" />
+    <script src="dist/bundle.js"></script>
+</head>
+<body>
+
+    <h1>
+        Webpack 101
+    </h1>
+
+    <hr />
+    <section>
+        <h2>Plugins</h2>
+        <p>
+            Plugins are a little less clear-cut compared to Loaders. Unliked loaders, they
+            are unconcerned with transpiling files, and more concerned with facilitating a
+            robust build process
+        </p>
+        <p>
+            A common plugin that you might want to use is the DefinePlugin. This can allow you
+            to insert variable values at build time (helpful for inserting things like the date,
+            environment, etc.). In this example, we replace INSERTED_STRING with some build-time string:
+            <pre>
+                <code>
+  plugins: [
+    new DefinePlugin({
+      INSERTED_STRING: '\"I am an inserted string!\"'
+    })
+  ]</code>
+            </pre>
+        </p>
+    </section>
+
+    <div id="root"></div>
+
+    <nav>
+        <a href="../Lesson4/lesson4.html">Lesson 4: Let's Add Some CSS =></a>
+    </nav>
+</body>
+</html>

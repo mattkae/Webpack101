@@ -1,0 +1,12 @@
+{
+    
+    "include": [
+        "./"
+    ],
+    "compilerOptions": {
+        "sourceMap": true,
+        "target": "es5",
+        "jsx": "react",
+        "allowSyntheticDefaultImports": true
+    }
+}

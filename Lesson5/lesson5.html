@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lesson 5: Adding React</title>
+    <meta charset="UTF-8"/>
+
+    <link rel="stylesheet" href="../index.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans" />
+    <script src="dist/bundle.js"></script>
+</head>
+<body>
+
+    <h1>
+        Webpack 101
+    </h1>
+
+    <hr />
+
+    <section>
+        <h2>React Time</h2>
+        <p>
+            There comes a point in any developers life where they decide, "Yolo, let's put react in my application".
+            Nowadays, there are a MILLION templates that will allow you to spin up a react project that "just works",
+            but I think most of them are difficult to work with. So let's spin up our own, because it's pretty easy.
+        </p>
+        <p>
+            Remember, React is just another file type that we will need to <b>transpile</b>. Lucky for us, babel-loader
+            comes with a react preset, so we can just use that.
+            <code>
+                <pre>
+    const path = require('path');
+
+    module.exports = {
+    entry: './index.js',
+    output: {
+        path: path.resolve(__dirname, 'dist'),
+        filename: 'bundle.js',
+    },
+    mode: 'production',
+    module: {
+            rules: [
+                {
+                    test:/\.(js|jsx)$/,
+                    include: path.resolve('./'),
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['babel-preset-env', '@babel/preset-react']
+                    },
+                    exclude: /node_modules/
+                }
+            ]
+        }
+    }
+                </pre>
+            </code>
+            Note that we exclude the node_modules for good measure, or else we will accidentally try and bundle them too.
+        </p>
+    </section>
+
+    <div id="root"></div>
+
+    <nav>
+        <a href="../Lesson6/lesson6.html">Lesson 6: TypeScript Integration =></a>
+    </nav>
+</body>
+</html>

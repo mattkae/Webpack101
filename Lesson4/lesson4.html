@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lesson 4: Let's Add Some CSS</title>
+    <meta charset="UTF-8"/>
+
+    <link rel="stylesheet" href="../index.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans" />
+    <script src="dist/bundle.js"></script>
+</head>
+<body>
+
+    <h1>
+        Webpack 101
+    </h1>
+
+    <hr />
+
+    <section>
+        <h2>Importing CSS</h2>
+        <p>
+            Now that we know how <b>transpilers</b> work, we can include just about <i>any</i> file in our final bundle. Let's
+            check out how we might be able to include a CSS file.
+        </p>
+        <p>
+            We will add "style-loader" and "css-loader" to our webpack config like so:
+            <code>
+                <pre>
+    ...
+    module: {
+        rules: [
+            ...
+            {
+                test: /\.css$/,
+                include: path.resolve('./'),
+                use: ["style-loader", "css-loader"]
+            }
+        ]
+    }
+    ...
+                </pre>
+            </code>
+            css-loader is responsible for converting of all the css files that you import into a string. style-loader then takes
+            this string and inserts them into a style tag at the head of yout html page.
+        </p>
+    </section>
+
+    <div id="root"></div>
+
+    <nav>
+        <a href="../Lesson5/lesson5.html">Lesson 5: Adding React =></a>
+    </nav>
+</body>
+</html>

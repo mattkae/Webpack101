@@ -1,0 +1,31 @@
+body {
+    width: 50%;
+    margin: auto;
+    font-family: "Open Sans"; 
+    font-size: 16px; 
+    font-style: normal; 
+    font-variant: normal;
+}
+
+pre {
+    padding: 0;
+    background-color: #f0f0f0;
+    font-family: Consolas,monaco,monospace; 
+    border-radius: 3px;
+    border: 1px solid black;
+    font-size: 12px;;
+}
+
+nav {
+    width: 100%;
+    text-align: right;
+}
+
+#root {
+    padding: 1rem;
+    background-color: lightyellow;
+    border-radius: 3px;
+    border: 1px solid gray;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}

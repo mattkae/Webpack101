@@ -1,0 +1,1 @@
+(()=>{"use strict";document.addEventListener("DOMContentLoaded",(function(){let e=Date.now();e*=2,document.getElementById("root").innerHTML="Look at me! Saying hi from another module with "+e}))})();
