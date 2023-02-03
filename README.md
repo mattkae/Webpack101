@@ -12,8 +12,10 @@ This is a small presentation that I gave to my coworkers on what webpack is and 
 ## Requirements
 Node 16 or 17 is preferred.
 
-## Building
-Run `npm run build` from the root of the project
+## Demo
+Click **on the link** to follow the demo:
+https://mattkae.github.io/Webpack101/
 
-## Running
-Open `index.html` in a browser of your choice.
+## Running Locally
+1. Run `npm run build` from the root of the project
+2. Open `index.html` in a browser of your choice.
