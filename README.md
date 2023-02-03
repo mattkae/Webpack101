@@ -1,8 +1,8 @@
 # Webpack 101
 This is a small presentation that I gave to my coworkers on what webpack is and how one might use it. The lessons are as follows:
 
-- Lesson 1: The simplest example
-- Lesson 2: Loaders
+- Lesson 1: Bundling
+- Lesson 2: Transpilers & Loaders
 - Lesson 3: Plugins
 - Lesson 4: CSS Importing
 - Lesson 5: React
